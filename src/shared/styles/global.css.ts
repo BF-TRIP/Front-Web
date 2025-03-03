@@ -12,9 +12,6 @@ globalStyle(':root', {
 
 /* HTML & Body Styles */
 globalStyle('html, body', {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
   position: 'relative',
   width: '100%',
   margin: '0',
