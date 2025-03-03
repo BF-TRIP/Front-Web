@@ -1,32 +1,21 @@
 export const color = {
   // gray scale
   white: '#FFFFFF',
-  gray100: '#F9FAFE',
-  gray200: '#EFF0F4',
-  gray300: '#D9DADD',
-  gray400: '#C5C6CB',
-  gray500: '#93959D',
-  gray600: '#75777F',
-  gray700: '#43444B',
-  gray800: '#323339',
-  gray900: '#212224',
+  yellow100: 'FFFCE7',
+  gray100: '#F2F2F2',
+  gray200: '#F0F0F0',
+  gray300: '#D9D9D9',
+  gray400: '#B3B3B3',
+  gray600: '#6E6E6E',
+  gray700: '#3F3F3F',
+  gray800: '#393939',
+  gray900: '#1E1E1E',
   black: '#121212',
 
   // primary
   yellow_main: '#FFE54A',
 
   // secondary
-  confeti_lime2: '#E9FFAC',
-  confeti_lime3: '#92C015',
-  confeti_red: '#FA4250',
-  confeti_purple: '#9747FF',
-
-  // opacity
-  black_op: 'rgba(18, 18, 18, 0.5)',
-  white_op_20: 'rgba(255, 255, 255, 0.20)',
-
-  // gradients
-  confeti_grad: 'linear-gradient(180deg, #E9FFAC 0%, #B5F602 100%)',
-  confeti_grad2: 'linear-gradient(180deg, #EFF0F4 0%, #E9FFAC 100%)',
-  confeti_purple_grad: 'linear-gradient(180deg, #131433 -3.3%, #9747FF 89.71%)',
+  blue: '#4A87FF',
+  orange: '#FFAE00',
 } as const;
