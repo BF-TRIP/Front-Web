@@ -1,10 +1,11 @@
+import HeaderSection from '../components/header-section/header-section';
+
 const Home = () => {
-    return (
-      <>
-        <h1>Home</h1>
-      </>
-    );
-  };
-  
-  export default Home;
-  
+  return (
+    <>
+      <HeaderSection />
+    </>
+  );
+};
+
+export default Home;
