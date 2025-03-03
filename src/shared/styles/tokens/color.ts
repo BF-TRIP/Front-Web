@@ -13,7 +13,7 @@ export const color = {
   black: '#121212',
 
   // primary
-  confeti_lime: '#B5F602',
+  yellow_main: '#FFE54A',
 
   // secondary
   confeti_lime2: '#E9FFAC',
