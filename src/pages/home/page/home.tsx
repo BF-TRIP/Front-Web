@@ -1,10 +1,15 @@
+import HeaderSection from '../components/header-section/header-section';
+import RecommendSection from '../components/recommend-section/recommend-section';
+import NearbySection from '../components/nearby-section/nearby-section';
+
 const Home = () => {
-    return (
-      <>
-        <h1>Home</h1>
-      </>
-    );
-  };
-  
-  export default Home;
-  
+  return (
+    <>
+      <HeaderSection />
+      <RecommendSection />
+      <NearbySection />
+    </>
+  );
+};
+
+export default Home;

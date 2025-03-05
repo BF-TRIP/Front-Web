@@ -1,1 +1,6 @@
+export { default as BtnHomeVoice } from './BtnHomeVoice'
 export { default as IcCommonLogo } from './IcCommonLogo'
+export { default as IcCommonScrap } from './IcCommonScrap'
+export { default as IcHomeBubble } from './IcHomeBubble'
+export { default as IcHomeSave44 } from './IcHomeSave44'
+export { default as IcHomeVoiceBg } from './IcHomeVoiceBg'
