@@ -119,7 +119,11 @@ export const cardDescription = style({
   fontWeight: 600,
   fontStyle: "normal",
   lineHeight: "normal",
+  whiteSpace: "nowrap",
+  overflow: "hidden",   
+  textOverflow: "ellipsis",
 });
+
 
 // 위치 스타일 (가까운 곳 관광지)
 export const cardLocation = style({

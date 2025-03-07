@@ -12,10 +12,8 @@ interface CardProps {
 const Card = ({ image, title, description, location, variant }: CardProps) => {
   return (
     <div className={variant === "recommended" ? styles.recommendedCard : styles.nearbyCard}>
-      {/* 스크랩 버튼 추가 */}
       <IcCommonScrap className={styles.scrapButton} />
-
-      {/* 추천 카드와 가까운 곳 카드의 이미지 스타일 분리 */}
+      
       <img
         src={image}
         alt={title}
