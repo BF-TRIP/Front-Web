@@ -2,11 +2,7 @@ import List from "../list/list";
 import { useNearbyPlaces } from "@shared/hooks/use-nearby-places";
 import * as styles from "./nearby-section.css";
 
-// 임시 좌표
-const gpsX = 128.1;
-const gpsY = 36.1;
-
-const NearbySection = () => {
+const NearbySection = ({ gpsX, gpsY }: { gpsX: number; gpsY: number }) => {
   const nearbyData = useNearbyPlaces(gpsX, gpsY);
 
   return (
