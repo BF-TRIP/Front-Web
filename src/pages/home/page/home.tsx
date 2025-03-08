@@ -8,13 +8,21 @@ const Home = () => {
   const [user, setUser] = useState<{ userNumber: number; userName: string; gpsX: number; gpsY: number } | null>(null);
 
   useEffect(() => {
-    const userInfo = getUserFromURL();
-    if (userInfo) {
-      setUser(userInfo);
+    const userData = getUserFromURL();
+    if (userData) {
+      setUser(userData);
     }
   }, []);
 
-  if (!user) return <div>유저 정보를 불러오는 중...</div>; // 로딩 ui 필요할 듯
+  if (!user) {
+    return (
+      <>
+        <HeaderSection />
+        <RecommendSection userNumber={32} userName="모행" />
+        <NearbySection gpsX={128.1} gpsY={36.1} />
+      </>
+    );
+  }
 
   return (
     <>
