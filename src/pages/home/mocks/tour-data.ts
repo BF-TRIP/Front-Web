@@ -1,5 +1,3 @@
-// 📂 mocks/tourData.ts
-
 export const recommendedData = [
     {
       id: 1,
