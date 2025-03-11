@@ -5,7 +5,7 @@ import RecommendSection from "../components/recommend-section/recommend-section"
 import NearbySection from "../components/nearby-section/nearby-section";
 
 const Home = () => {
-  const [user, setUser] = useState<{ userNumber: number; userName: string; gpsX: number; gpsY: number } | null>(null);
+  const [user, setUser] = useState(() => getUserFromURL());
 
   useEffect(() => {
     const userData = getUserFromURL();
@@ -14,21 +14,17 @@ const Home = () => {
     }
   }, []);
 
-  if (!user) {
-    return (
-      <>
-        <HeaderSection />
-        <RecommendSection userNumber={32} userName="모행" />
-        <NearbySection gpsX={128.1} gpsY={36.1} />
-      </>
-    );
-  }
-
   return (
     <>
       <HeaderSection />
-      <RecommendSection userNumber={user.userNumber} userName={user.userName} />
-      <NearbySection gpsX={user.gpsX} gpsY={user.gpsY} />
+      <RecommendSection 
+        userNumber={user?.userNumber || 32} 
+        userName={user?.userName || "모행"} 
+      />
+      <NearbySection 
+        gpsX={user?.gpsX || 128.1} 
+        gpsY={user?.gpsY || 36.1} 
+      />
     </>
   );
 };
