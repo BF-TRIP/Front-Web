@@ -3,10 +3,14 @@ import {
   IcCommonLogo,
   IcHomeBubble,
   IcHomeVoiceBg,
+  IcHomeSetting,
 } from "@shared/assets/svg";
+import { useNavigate } from "react-router-dom";
 import * as styles from "./header-section.css";
 
 const HeaderSection = () => {
+  const navigate = useNavigate(); 
+
   const handleVoiceSearch = () => {
     if (window.webkit?.messageHandlers?.serverEvent) {
       window.webkit.messageHandlers.serverEvent.postMessage("Voice");
@@ -18,6 +22,9 @@ const HeaderSection = () => {
   return (
     <header className={styles.header}>
       <IcCommonLogo className={styles.logo} />
+      
+      <IcHomeSetting className={styles.settingIcon} onClick={() => navigate("/setting")} />
+
       <div className={styles.voiceSearchContainer}>
         <IcHomeVoiceBg className={styles.voiceBg} />
         <BtnHomeVoice

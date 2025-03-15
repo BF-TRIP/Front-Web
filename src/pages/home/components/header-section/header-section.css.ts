@@ -38,3 +38,12 @@ export const voiceBubble = style({
   zIndex: 3,
   width: '18rem',
 });
+
+export const settingIcon = style({
+  position: "absolute",
+  top: "1.6rem",
+  right: "1.6rem",
+  width: "2.4rem",
+  height: "2.4rem",
+  cursor: "pointer",
+});
