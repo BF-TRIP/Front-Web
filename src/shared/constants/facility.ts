@@ -25,7 +25,7 @@ export const facilityCategories = [
   },
   {
     category: "임산부_영유아",
-    fields: ["stroller", "lactationRoom"],
+    fields: ["stroller", "lactationRoom", "babySpareChair"],
     icon: IcDetailPregnant,
   },
 
