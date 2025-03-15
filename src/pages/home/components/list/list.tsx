@@ -21,9 +21,12 @@ const List = ({ items = [], variant }: ListProps) => {
       {items.map((item) => (
         <Card
           key={item.contentId}
+          id={item.contentId}
           image={item.originalImage}
           title={item.contentTitle}
-          description={isRecommendedPlace(item) ? item.publicTransport : undefined}
+          description={
+            isRecommendedPlace(item) ? item.publicTransport : undefined
+          }
           location={isNearbyPlace(item) ? item.addr : undefined}
           variant={variant}
         />
