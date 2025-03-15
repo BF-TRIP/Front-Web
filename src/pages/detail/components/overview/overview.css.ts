@@ -15,41 +15,6 @@ export const image = style({
   objectFit: "cover",
 });
 
-export const header = style({
-  position: "absolute",
-  top: "2rem",
-  left: "2rem",
-  right: "2rem",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-});
-
-export const backButton = style({
-  width: "3rem",
-  height: "3rem",
-  background: "none",
-  cursor: "pointer",
-});
-
-export const scrapIcon = style({
-  width: "3rem",
-  height: "3rem",
-  cursor: "pointer",
-});
-
-export const rightIcons = style({
-  display: "flex",
-  gap: "1rem",
-  alignItems: "center",
-});
-
-export const ttsIcon = style({
-  width: "3rem",
-  height: "3rem",
-  cursor: "pointer",
-});
-
 export const content = style({
   width: "100%",
   padding: "1.5rem",
@@ -110,4 +75,19 @@ export const divider = style({
   height: "1px",
   background: themeVars.color.gray200,
   marginTop: "1.5rem",
+});
+
+export const ttsLoading = style({
+  position: "absolute",
+  bottom: "3rem",
+  left: "50%",
+  transform: "translateX(-50%)",
+  backgroundColor: themeVars.color.black,
+  color: themeVars.color.white,
+  padding: "0.5rem 1rem",
+  borderRadius: "0.5rem",
+  fontSize: "1.4rem",
+  fontWeight: "500",
+  boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+  opacity: 0.9,
 });
