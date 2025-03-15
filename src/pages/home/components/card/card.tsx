@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { routePath } from "@shared/constants/path";
+import { IcCommonScrap } from "@shared/assets/svg";
 import * as styles from "./card.css";
 
 interface CardProps {
@@ -23,7 +24,10 @@ const Card = ({ id, image, title, description, location, variant }: CardProps) =
       className={variant === "recommended" ? styles.recommendedCard : styles.nearbyCard}
       onClick={handleClick}
     >
+      <IcCommonScrap className={styles.scrapButton} />
+
       <img src={image} alt={title} className={variant === "recommended" ? styles.cardImageRecommended : styles.cardImageNearby} />
+      
       {variant === "recommended" ? (
         <div className={styles.cardContentRecommended}>
           <p className={styles.cardDescription}>{description}</p>
