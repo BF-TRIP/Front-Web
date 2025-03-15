@@ -13,7 +13,7 @@ const fadeOutDown = keyframes({
 
 export const toastContainer = style({
   display: "flex",
-  width: "35.8rem",
+  width: "93%",
   padding: "1rem",
   alignItems: "center",
   gap: "1rem",
