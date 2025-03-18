@@ -34,7 +34,7 @@ const Facility = ({ place }: FacilityProps) => {
         .filter(([, items]) => items.length > 0)
         .map(([category, items]) => (
           <div key={category} className={styles.detailContainer}>
-            <p className={styles.detailTitle}>{category.replace("_", " ")}</p>
+            <p className={styles.detailTitle}>{category.replace(/_/g, " ")}</p> 
             <ul className={styles.detailList}>
               {items.map((item, index) => (
                 <li key={index}>{item}</li>

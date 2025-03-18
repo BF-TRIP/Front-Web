@@ -12,10 +12,9 @@ export const facilityCategories = [
     fields: ["wheelchair", "elevator", "restroom", "publicTransport"],
     icon: IcDetailWheelchair,
   },
-
   {
     category: "노령자",
-    fields: [],
+    fields: ["wheelchair", "elevator", "restroom", "publicTransport"],
     icon: IcDetailCane,
   },
   {
