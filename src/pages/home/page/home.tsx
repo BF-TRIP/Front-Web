@@ -24,6 +24,7 @@ const Home = () => {
       <NearbySection 
         gpsX={user?.gpsX || 128.1} 
         gpsY={user?.gpsY || 36.1} 
+        userNumber={user?.userNumber || 32} 
       />
     </>
   );

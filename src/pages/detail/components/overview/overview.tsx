@@ -7,6 +7,7 @@ import Toast from "../toast/toast";
 import * as styles from "./overview.css";
 import { PlaceDetail } from "@pages/detail/types/detail-response";
 import Description from "../description/description";
+import { getUserFromURL } from "@shared/utils/get-user-from-url";
 
 interface OverviewProps {
   place: PlaceDetail;
@@ -17,16 +18,18 @@ const Overview = ({ place }: OverviewProps) => {
   const { toast, showToast } = useToast();
   const { copyToClipboard } = useClipboard(place.addr, () => showToast("복사 완료", "success"));
   const { ttsLoading, isPlaying, handleTtsToggle } = useTTS(); 
+  const user = getUserFromURL(); 
 
   return (
     <div className={styles.container} ref={contentRef}>
       <img src={place.originalImage} alt={place.contentTitle} className={styles.image} />
 
-      {/* 헤더 */}
       <Header
         onBack={() => window.history.back()}
         onTtsToggle={() => contentRef.current && handleTtsToggle(contentRef.current)}
         isPlaying={isPlaying}
+        userNumber={user?.userNumber} 
+        contentId={place.contentId} 
       />
 
       {/* 장소 기본 정보 */}

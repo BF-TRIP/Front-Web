@@ -14,7 +14,11 @@ const RecommendSection = ({ userNumber, userName }: RecommendSectionProps) => {
   return (
     <section className={styles.section}>
       <h2 className={styles.title}>{userName} 님만을 위한 관광지 추천</h2>
-      {isLoading ? <SkeletonList count={4} /> : <List items={recommendedData} variant="recommended" />}
+      {isLoading ? (
+        <SkeletonList count={4} />
+      ) : (
+        <List items={recommendedData} variant="recommended" userNumber={userNumber} /> 
+      )}
     </section>
   );
 };
