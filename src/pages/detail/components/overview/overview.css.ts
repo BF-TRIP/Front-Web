@@ -46,13 +46,17 @@ export const addressLabel = style({
   fontWeight: "500",
   color: themeVars.color.gray700,
   marginRight: "1rem",
+  whiteSpace: "nowrap",
 });
 
 export const addressText = style({
   fontSize: "1.4rem",
   color: themeVars.color.gray650,
   fontWeight: "500",
-  marginRight: "0.5rem",
+  flex: 1,
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  whiteSpace: "nowrap", 
 });
 
 export const copyButton = style({
@@ -62,6 +66,7 @@ export const copyButton = style({
   background: "none",
   border: "none",
   cursor: "pointer",
+  whiteSpace: "nowrap", 
 });
 
 export const copySuccess = style({

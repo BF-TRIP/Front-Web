@@ -4,19 +4,28 @@ import { fetchPlaceDetail } from "@shared/apis/detail/get-place-detail";
 import Overview from "../components/overview/overview";
 import Facility from "../components/facility/facility";
 import { PlaceDetail } from "../types/detail-response";
+import Spinner from "@shared/components/spinner/spinner";
 
 const DetailPage = () => {
   const { id } = useParams<{ id: string }>();
-  const [place, setPlace] = useState<PlaceDetail | null>(null);
+  const [place, setPlace] = useState<PlaceDetail | undefined>(undefined);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!id) return;
+    setLoading(true);
     fetchPlaceDetail(Number(id))
-      .then(setPlace)
-      .catch((err) => console.error("Failed to fetch place detail:", err));
+      .then((data) => {
+        setPlace(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Failed to fetch place detail:", err);
+        setLoading(false);
+      });
   }, [id]);
 
-  if (!place) return <p>Loading...</p>;
+  if (loading || !place) return <Spinner />; 
 
   return (
     <>
