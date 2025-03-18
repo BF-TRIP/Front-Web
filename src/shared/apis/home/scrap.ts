@@ -24,3 +24,13 @@ export const deleteScrap = async ({ userNumber, contentId }: ScrapRequest) => {
     throw error;
   }
 };
+
+export const fetchSavedScraps = async (userNumber: number): Promise<number[]> => {
+  try {
+    const response = await api.get<{ contentId: number }[]>(`/api/course/save/${userNumber}`);
+    return response.data.map((item) => item.contentId);
+  } catch (error) {
+    console.error("스크랩 목록 가져오기 실패:", error);
+    return [];
+  }
+};

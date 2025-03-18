@@ -13,38 +13,42 @@ interface CardProps {
   location?: string;
   variant: "recommended" | "nearby";
   userNumber: number;
+  isScrapped: boolean; 
 }
 
-const Card = ({ id, image, title, description, location, variant, userNumber }: CardProps) => {
+const Card = ({ id, image, title, description, location, variant, userNumber, isScrapped: initialScrap }: CardProps) => {
   const navigate = useNavigate();
-  const [isScrapped, setIsScrapped] = useState(false);
+  const [isScrapped, setIsScrapped] = useState(initialScrap);
 
   const handleClick = () => {
     navigate(routePath.DETAIL.replace(":id", String(id)));
   };
 
   const handleScrapClick = async (e: React.MouseEvent) => {
-    e.stopPropagation();
+    e.stopPropagation(); 
+
+    if (!userNumber) {
+      console.error("스크랩을 위해 userNumber가 필요합니다.");
+      return;
+    }
 
     try {
       if (isScrapped) {
-        // ✅ 스크랩 취소
         await deleteScrap({ userNumber, contentId: id });
         setIsScrapped(false);
       } else {
-        // ✅ 스크랩 저장
         await saveScrap({ userNumber, contentId: id });
         setIsScrapped(true);
       }
-    } catch {
-      console.error("스크랩 저장/삭제 실패");
+    } catch (error) {
+      console.error("스크랩 저장/삭제 실패:", error);
     }
   };
 
   return (
     <div
       className={variant === "recommended" ? styles.recommendedCard : styles.nearbyCard}
-      onClick={handleClick}
+      onClick={handleClick} 
     >
       <IcCommonScrap
         className={styles.scrapButton}
