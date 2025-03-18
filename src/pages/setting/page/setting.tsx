@@ -10,6 +10,15 @@ const SettingPage = () => {
   const [isLogoutOpen, setIsLogoutOpen] = useState(false);
   const [isWithdrawOpen, setIsWithdrawOpen] = useState(false);
 
+  const handleWithdraw = () => {
+    if (window.webkit?.messageHandlers?.serverEvent) {
+      window.webkit.messageHandlers.serverEvent.postMessage("quit");
+    } else {
+      console.error("iOS랑 연결 실패,,,");
+    }
+    setIsWithdrawOpen(false);
+  };
+
   return (
     <>
       <Header />
@@ -32,10 +41,10 @@ const SettingPage = () => {
 
       <SettingList
         items={[
-          {
-            title: SETTINGS.ACCOUNT_MANAGEMENT.LOGOUT,
-            onClick: () => setIsLogoutOpen(true),
-          },
+          // {
+          //   title: SETTINGS.ACCOUNT_MANAGEMENT.LOGOUT,
+          //   onClick: () => setIsLogoutOpen(true),
+          // },
           {
             title: SETTINGS.ACCOUNT_MANAGEMENT.WITHDRAW,
             onClick: () => setIsWithdrawOpen(true),
@@ -62,11 +71,7 @@ const SettingPage = () => {
         title={BOTTOM_SHEET_MESSAGES.WITHDRAW.TITLE}
         confirmText={BOTTOM_SHEET_MESSAGES.WITHDRAW.CONFIRM}
         cancelText={BOTTOM_SHEET_MESSAGES.WITHDRAW.CANCEL}
-        onConfirm={() => {
-          // TODO: 회원 탈퇴 api 연결
-          console.log("회원 탈퇴 실행");
-          setIsWithdrawOpen(false);
-        }}
+        onConfirm={handleWithdraw}
       />
     </>
   );
