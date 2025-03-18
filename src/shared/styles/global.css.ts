@@ -20,11 +20,18 @@ globalStyle('html, body', {
   fontSize: '62.5%',
   scrollbarWidth: 'none',
   scrollBehavior: 'smooth',
+  overflow: 'auto',
+  WebkitOverflowScrolling: 'touch',
+  touchAction: 'auto',
 });
 
 /* Scrollbar Hide */
 globalStyle('::-webkit-scrollbar', {
   display: 'none',
+});
+
+globalStyle("*", {
+  pointerEvents: "auto",
 });
 
 export const rootStyle = style({
