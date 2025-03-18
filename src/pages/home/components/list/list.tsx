@@ -8,9 +8,10 @@ type ListItem = RecommendedPlace | NearbyPlace;
 interface ListProps {
   items?: ListItem[];
   variant: "recommended" | "nearby";
+  userNumber: number; 
 }
 
-const List = ({ items = [], variant }: ListProps) => {
+const List = ({ items = [], variant, userNumber }: ListProps) => { 
   if (!Array.isArray(items)) {
     console.warn("items가 배열이 아닙니다. 기본 빈 배열을 사용합니다:", items);
     items = [];
@@ -24,11 +25,10 @@ const List = ({ items = [], variant }: ListProps) => {
           id={item.contentId}
           image={item.originalImage}
           title={item.contentTitle}
-          description={
-            isRecommendedPlace(item) ? item.publicTransport : undefined
-          }
+          description={isRecommendedPlace(item) ? item.publicTransport : undefined}
           location={isNearbyPlace(item) ? item.addr : undefined}
           variant={variant}
+          userNumber={userNumber}
         />
       ))}
     </div>
