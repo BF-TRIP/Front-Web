@@ -134,4 +134,7 @@ export const cardLocation = style({
   fontWeight: 600,
   fontStyle: "normal",
   lineHeight: "normal",
+  whiteSpace: "nowrap",
+  overflow: "hidden", 
+  textOverflow: "ellipsis",
 });
