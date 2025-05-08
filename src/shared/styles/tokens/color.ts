@@ -1,7 +1,7 @@
 export const color = {
   // gray scale
   white: '#FFFFFF',
-  yellow100: 'FFFCE7',
+  yellow100: '#FFFCE7',
   gray100: '#F2F2F2',
   gray200: '#F0F0F0',
   gray300: '#D9D9D9',
@@ -14,7 +14,7 @@ export const color = {
   black: '#121212',
 
   // primary
-  yellow_main: '#FFE54A',
+  yellow_main: '#4FB0FF',
 
   // secondary
   blue: '#4A87FF',
