@@ -6,9 +6,10 @@ import * as styles from "./recommend-section.css";
 interface RecommendSectionProps {
   userNumber: number;
   userName: string;
+  savedScraps: number[];
 }
 
-const RecommendSection = ({ userNumber, userName }: RecommendSectionProps) => {
+const RecommendSection = ({ userNumber, userName, savedScraps }: RecommendSectionProps) => {
   const { recommendedData, isLoading } = useRecommendPlaces(userNumber);
 
   return (
@@ -17,7 +18,12 @@ const RecommendSection = ({ userNumber, userName }: RecommendSectionProps) => {
       {isLoading ? (
         <SkeletonList count={4} />
       ) : (
-        <List items={recommendedData} variant="recommended" userNumber={userNumber} /> 
+        <List 
+          items={recommendedData} 
+          variant="recommended" 
+          userNumber={userNumber} 
+          savedScraps={savedScraps}
+        />
       )}
     </section>
   );
